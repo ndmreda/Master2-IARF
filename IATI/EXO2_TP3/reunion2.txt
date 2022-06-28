@@ -1,0 +1,33 @@
+c A : Albert 1
+c B : betty 2
+c C : chris 3
+c D : David 4
+c E : Eva 5
+c R : reunion retard 6
+c K : calme 7
+c EF : Efficace 8
+c -A v -B v -C .7
+c D --> C .4
+c B --> R .3
+c R --> -C .3
+c R --> -K .5
+c A ^ D --> -K .6
+c A ^ B ^ D --> -K .9
+c B ^ E --> EF .5
+c A ^ B ^ E ^ -C --> EF .8 
+c B 1
+c A 1
+c E 1
+c -C 1
+p cnf 8 11
+-1 -2 -3 0
+-4 3 0
+-6 -7 0
+-1 -2 -7 0
+-1 -2 -4 -7 0
+-2 -5 8 0
+-1 -2 -5 3 8 0
+2 0
+1 0
+5 0
+-8 0

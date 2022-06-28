@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/zmekkani/Téléchargements/Hybrid_System_Discrete_Event_Simulator-master"/>
+			<item value="/home/zmekkani/Téléchargements/Simulation-DEVS-exo2-master"/>
+			<item value="/home/zmekkani/Téléchargements/TP_COO_M2_Java-master"/>
+			<item value="/home/zmekkani/Téléchargements/TP_COO_M2_Java-master(1)/TP_COO_M2_Java-master"/>
+			<item value="/home/zmekkani/Téléchargements/TP_COO_M2_Java-master(1)/TP_COO_M2_Java-master/src"/>
+			<item value="/home/zmekkani/Téléchargements/TP_COO_M2_Java-master(1)/TP_COO_M2_Java-master/src/com"/>
+			<item value="/home/zmekkani/Documents/M2/tp"/>
+			<item value="/home/zmekkani/Documents/M2/Temps réel/COO/tp/src"/>
+			<item value="/home/zmekkani/Documents/M2/Temps réel/COO/tp"/>
+		</list>
+	</section>
+</section>

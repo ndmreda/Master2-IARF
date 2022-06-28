@@ -1,0 +1,20 @@
+c STA-->-ANC
+c BN ^ ANC --> AUG 
+c FAI --> AUG
+c BN ^ STA --> -AUG
+c STA ^ BVU --> BN
+c BN ^ FAI -- > AUG
+c STA ^ FAI ^ BVU
+c -STA v ANC 0.9
+c -BN v - ANC v AUG 0.9
+c -FAI v AUG 0.9
+c STA 1
+c FAI 1
+c BVU 1
+c -AUG 1
+c STA 1 , ANC 2 , BN 3, AUG 4, BVU 5, FAI 6
+p cnf 6 4
+1 0
+6 0
+5 0
+-4 0

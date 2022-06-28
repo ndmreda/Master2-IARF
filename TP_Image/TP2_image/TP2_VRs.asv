@@ -1,0 +1,96 @@
+%1)
+img = imread("lenna.tif");
+img=double(img)/255; 
+SNR = 20;
+ib,bruit,sigma = genererimage(img,SNR);
+
+figure();
+imagesc(ib);
+colormap(gray);
+colorbar; 
+
+%2)
+    %a)
+J = wiener2(ib,[5,5]);
+figure();
+imagesc(J);
+colormap(gray);
+colorbar; 
+%b)
+img2 = wavelet(img,2);
+%seillage 
+%sigma_img = sum((img - mean(img)).^2)/(length(img) - 1);
+%Varier T de 0.1 a 0.5
+T = sigma*sqrt(2)*log(length(img));
+siz = size(img2);
+
+%dure
+doux=img2
+dure=img2
+
+sz_dr = size(dure)
+for i = 1:sz_dr(1)
+    for j = 1:sz_dr(2)
+        if doux(i,j) <= T
+           doux(i,j)= 0;
+        end
+    end
+end
+
+seill_doux = invwavelet(doux,2);
+
+figure();
+imagesc(seill_doux);
+colormap(gray);
+colorbar; 
+
+%doux
+ sz_dx = size(doux)
+for i = 1: sz_dx(1)
+    for j = 1: sz_dx(2)
+        if abs(dure(i,j)) <= T
+           dure(i,j)= 0;
+        end
+        if dure(i,j) > T
+           dure(i,j)= dure(i,j)- T;
+        end
+        if dure(i,j) < -T
+           dure(i,j)= dure(i,j)+ T;
+        end
+    end
+end
+
+
+seuill_dure = invwavelet(dure,2);
+figure();
+imagesc(seuill_dure);
+colormap(gray);
+colorbar; 
+
+
+%seillage image avec fct matlab 
+img_hard = wthresh(dure,'h',thr);
+img_soft = wthresh(doux,'s',thr);
+img_hard = invwavelet(img_hard,2);
+img_soft = invwavelet(img_hard,2);
+
+figure();
+imagesc(img_hard);
+colormap(gray);
+colorbar; 
+
+figure();
+imagesc(img_hard);
+colormap(gray);
+colorbar; 
+%c)
+img_nn_local = imnlmfilt(img)
+figure();
+imagesc(img_nn_local);
+colormap(gray);
+colorbar; 
+
+
+%Déconvolution 
+
+
